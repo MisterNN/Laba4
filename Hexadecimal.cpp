@@ -50,8 +50,33 @@ delete[]result;
 }
 
 
+void assert(char* test, char* string)
+{
+	int k = 0;
+	char* fortester = DecToHex(string);
+	for (int i = 0;i < strlen(DecToHex(string));i++)
+	{
+		if (*( test + i ) == *( fortester + i ))
+		{
+			k++;
+		}
+	}
+	if (k == strlen(test))
+	{
+		cout << "OK" << endl;
+	}
+	else
+	{
+		cout << "FAIL" << endl;
+	}
+}
+
 int main()
 {
-	return (0);
+  assert("0x10axxx","266xxx");
+  assert("abgagugu","abgagugu");
+  assert("v0x3ffii raz idy gylat","v1023ii raz idy gylat");
+  assert("seichas ya ychys na 0x1 kurse i mne 0x500 let","seichas ya ychys na 1 kurse i mne 1280 let");
+  assert("proga rabotaet ispravno","proga rabotaet ispravno");
 }
 
