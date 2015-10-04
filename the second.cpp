@@ -35,6 +35,24 @@ int summation(char string[])
 	return sum;
 }
 
+void assert(char string[], int number)
+{
+	int result = summation(string);
+	if (number == result)
+		cout << "OK" << endl;
+	else
+		cout << "Fail: " << result << " != " << number << endl;
+}
+int main()
+{
+	assert("594+65-66+0", 593);
+	assert("+594+65-66+0", 593);
+	assert("1+2+3+4+5", 15);
+	assert("744-114+69", 699);
+	assert("744+114+69", 927);
+	assert("7-0+3+2", 12);
+}
+
 int main()
 {
 }
