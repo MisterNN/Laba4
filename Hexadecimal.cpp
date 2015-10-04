@@ -54,7 +54,7 @@ void assert(char* test, char* string)
 {
 	int k = 0;
 	char* fortester = DecToHex(string);
-	for (int i = 0;i < strlen(DecToHex(string));i++)
+	for (int i = 0; i < strlen(test); i++)
 	{
 		if (*( test + i ) == *( fortester + i ))
 		{
@@ -78,5 +78,6 @@ int main()
   assert("v0x3ffii raz idy gylat","v1023ii raz idy gylat");
   assert("seichas ya ychys na 0x1 kurse i mne 0x500 let","seichas ya ychys na 1 kurse i mne 1280 let");
   assert("proga rabotaet ispravno","proga rabotaet ispravno");
+  assert("0x7f9,0x17459, 0x132ef","2041,95321, 78575");
 }
 
